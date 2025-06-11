@@ -5,6 +5,10 @@ on:
     branches:
       - main  # or 'master'
 
+permissions:
+  id-token: write  # Required for OIDC authentication
+  contents: read   # Required to fetch repository content
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
