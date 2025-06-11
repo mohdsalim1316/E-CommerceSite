@@ -35,13 +35,14 @@ jobs:
     needs: build
     environment:
       name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      #url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+      url: ${{ ecommerce-cfcgc7cnhzh6cygw.westus2-01.azurewebsites.net }}
     
     steps:
       - name: Download artifact from build job
         uses: actions/download-artifact@v4
         with:
-          name: ASP-app
+          name: E-CommerceSite
       
       - name: Deploy to Azure Web App
         id: deploy-to-webapp
@@ -49,5 +50,5 @@ jobs:
         with:
           app-name: 'EcommerceApp'
           slot-name: 'Production'
-          package: .
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4967D741C2B9401DAB1395FF839AAB03 }}
+          #package: .
+          #publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4967D741C2B9401DAB1395FF839AAB03 }}
