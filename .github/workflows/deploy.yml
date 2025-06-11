@@ -8,7 +8,8 @@ on:
 permissions:
   id-token: write  # Required for OIDC authentication
   contents: read   # Required to fetch repository content
-
+  pages: write
+  
 jobs:
   deploy:
     runs-on: ubuntu-latest
